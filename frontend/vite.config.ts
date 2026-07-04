@@ -8,11 +8,11 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'https://ai-powered-smart-city-integration.onrender.com/',
         changeOrigin: true,
       },
       '/ws': {
-        target: 'ws://localhost:8000',
+        target: 'wss://ai-powered-smart-city-integration.onrender.com/ws',
         ws: true,
       },
     },
