@@ -24,7 +24,7 @@ export const ChatPage: React.FC = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/v1/chat/query', {
+      const res = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/chat/query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMsg, history: messages })

@@ -25,7 +25,7 @@ export const EmergencyPage: React.FC = () => {
   const fetchAlerts = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/api/v1/alerts/active');
+      const res = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/alerts/active')
       if (res.ok) {
         setAlerts(await res.json());
       }
@@ -41,7 +41,7 @@ export const EmergencyPage: React.FC = () => {
     if (!title || !description) return;
 
     try {
-      const res = await fetch('/api/v1/alerts/dispatch', {
+      const res = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/alerts/dispatch', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, severity, zone_id: zoneId, description })
@@ -58,7 +58,9 @@ export const EmergencyPage: React.FC = () => {
 
   const handleResolve = async (id: string) => {
     try {
-      const res = await fetch(`/api/v1/alerts/resolve/${id}`, { method: 'POST' });
+      const res = await fetch(`https://ai-powered-smart-city-integration.onrender.com/api/v1/alerts/resolve/${id}`, {
+  method: 'POST'
+});
       if (res.ok) {
         fetchAlerts();
       }

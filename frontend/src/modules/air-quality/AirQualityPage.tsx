@@ -25,7 +25,7 @@ export const AirQualityPage: React.FC = () => {
     try {
       setLoading(true);
       // Fetch latest readings
-      const latestRes = await fetch('/api/v1/air-quality/latest');
+      const latestRes = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/air-quality/latest');
       if (latestRes.ok) {
         let data = await latestRes.json();
         if (simulatedPollution) {
@@ -40,7 +40,7 @@ export const AirQualityPage: React.FC = () => {
       }
 
       // Fetch historical for selected zone
-      const histRes = await fetch(`/api/v1/air-quality/historical/${encodeURIComponent(selectedZone)}`);
+      const histRes = await fetch(`https://ai-powered-smart-city-integration.onrender.com/api/v1/air-quality/historical/${encodeURIComponent(selectedZone)}`);
       if (histRes.ok) {
         const data = await histRes.json();
         const formatted = data.readings.map((r: AQIReading) => ({

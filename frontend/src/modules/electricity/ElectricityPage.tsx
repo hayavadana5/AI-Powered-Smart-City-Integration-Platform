@@ -20,8 +20,8 @@ export const ElectricityPage: React.FC = () => {
   const fetchGridData = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/api/v1/electricity/latest');
-      const sumRes = await fetch('/api/v1/electricity/summary');
+      const res = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/electricity/latest');
+const sumRes = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/electricity/summary');
       if (res.ok && sumRes.ok) {
         let data = await res.json();
         let sumData = await sumRes.json();

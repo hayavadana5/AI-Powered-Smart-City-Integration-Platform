@@ -21,8 +21,8 @@ export const TrafficPage: React.FC = () => {
   const fetchTrafficData = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/api/v1/traffic/latest');
-      const sumRes = await fetch('/api/v1/traffic/summary');
+      const res = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/traffic/latest');
+const sumRes = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/traffic/summary');
       if (res.ok && sumRes.ok) {
         let data = await res.json();
         let sumData = await sumRes.json();

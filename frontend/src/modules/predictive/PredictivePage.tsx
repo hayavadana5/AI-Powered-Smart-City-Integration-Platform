@@ -24,8 +24,8 @@ export const PredictivePage: React.FC = () => {
   const fetchForecasts = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/api/v1/predictions/forecasts');
-      if (res.ok) {
+      const res = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/predictions/forecasts');
+if (res.ok) {
         setPredictions(await res.json());
       }
     } catch (err) {

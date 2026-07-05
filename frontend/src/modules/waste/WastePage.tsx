@@ -20,8 +20,8 @@ export const WastePage: React.FC = () => {
   const fetchWasteData = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/api/v1/waste/latest');
-      const sumRes = await fetch('/api/v1/waste/summary');
+const res = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/waste/latest');
+const sumRes = await fetch('https://ai-powered-smart-city-integration.onrender.com/api/v1/waste/summary');
       if (res.ok && sumRes.ok) {
         let data = await res.json();
         let sumData = await sumRes.json();
